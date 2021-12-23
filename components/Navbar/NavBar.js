@@ -9,10 +9,14 @@ import {
 import React from 'react';
 import { useMessengerProvider } from '../Context/MessengerContext';
 import ChannelAdmin from './../Messenger/ChannelAdmin';
+import { useRouter } from 'next/router';
 
 const NavBar = () => {
   const { state, toggleSidebar } = useMessengerProvider();
+  const router = useRouter();
   const { user } = state;
+
+  if (user === "") router.push('/')
 
   return (
     <div>
