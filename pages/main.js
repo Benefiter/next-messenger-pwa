@@ -12,7 +12,7 @@ import Layout from '../components/Layout';
 const Main = () => {
   const { state, dispatch, connected } = useMessengerProvider();
 
-  const { clientConnection, channels, stats } = state;
+  const { clientConnection, channels } = state;
 
   const subscribeToChannelMessageUpdates = channelId => {
     if (connected()) {
@@ -62,21 +62,8 @@ const Main = () => {
 
     clientConnection.on('channelDeleted', onChannelDeletedCallback);
 
-    clientConnection.invoke('GetChannels').then(channels => {
-      dispatch({ type: actions.addChannels, payload: { channels } });
-
-      channels.forEach(c => {
-        clientConnection
-          .invoke('GetChannelMessages', Number(c.channelId))
-          .then(messages => {
-            dispatch({
-              type: actions.updateChannelMessages,
-              payload: { messages: messages },
-            });
-          });
-
-        subscribeToChannelMessageUpdates(c.channelId);
-      });
+    channels.forEach(c => {
+      subscribeToChannelMessageUpdates(c.channelId);
     });
 
     return () => {

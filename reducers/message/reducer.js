@@ -29,7 +29,7 @@ export const messageReducer = (state, action) => {
     case actions.addChannels:
       const { channels } = action.payload;
 
-      if (state.user === '' || channels == null || channels.length === 0) {
+      if (channels == null || channels.length === 0) {
         return state;
       }
       return {
