@@ -1,5 +1,4 @@
 import '../styles/globals.css';
-import Layout from '../components/Layout';
 import { MessengerProvider } from '../components/Context/MessengerContext';
 import Head from 'next/head';
 

@@ -1,8 +1,6 @@
 import Login from '../components/Login/Login';
 import React from 'react';
-import {
-  startSignalRConnection,
-} from '../services/signalR/signalrClient';
+import { startSignalRConnection } from '../services/signalR/signalrClient';
 import { useMessengerProvider } from '../components/Context/MessengerContext';
 import { actions } from './../reducers/message/actions';
 
