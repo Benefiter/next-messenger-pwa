@@ -24,7 +24,7 @@ const Login = () => {
       style={{ height: '100vh' }}
     >
       <div
-        className='card bg-info border border-2 border-dark p-4 shadow-lg '
+        className='card bg-primary border border-2 border-dark p-4 shadow-lg '
         style={{ width: `20rem` }}
       >
         <div className='card-body'>
@@ -49,7 +49,6 @@ const Login = () => {
                 type='submit'
                 className='mt-4'
                 name='OK'
-                color='primary'
               />
               </div>
           </form>

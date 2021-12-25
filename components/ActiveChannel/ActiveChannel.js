@@ -6,7 +6,7 @@ import Message from './../Message/Message';
 
 const ActiveChannel = () => {
   const { state } = useMessengerProvider();
-  const { activeChannel, channels } = state;
+  const { activeChannel, channels, user } = state;
   const [messages, setMessages] = React.useState([]);
 
   const hasActiveChannel = activeChannel !== '';
