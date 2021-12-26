@@ -10,7 +10,6 @@ import Layout from '../components/Layout';
 import axios from 'axios';
 
 const Main = ({ existingChannels, existingMessages }) => {
-  console.log({existingChannels, existingMessages});
   
   const { state, dispatch, connected } = useMessengerProvider();
 
